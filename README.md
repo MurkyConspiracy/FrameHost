@@ -1,4 +1,4 @@
-#Why?
+# Why?
 I am Nick Reeder, I love to program and hack software. I want to make an application that is simple and easy to use to test out security implementations. I don't want to bar people from anything, that is why it is going to be and stay open source. I want this to be a learning expereince for myself and any others who want to try. 
 I plan to try new things with my coding and tyry and implement security into the application. I will then later go through and try and hack my games and systems, using tools like ILSpy and OllyDbg.
 # FrameHost
