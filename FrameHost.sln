@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameHost", "FrameHost\FrameHost.csproj", "{28626C1A-ECBF-4DC8-A6F0-34736F91BC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileIO", "FileIO\FileIO.csproj", "{C3D48BE1-1271-4A4D-A761-8E8421F5CFCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28626C1A-ECBF-4DC8-A6F0-34736F91BC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28626C1A-ECBF-4DC8-A6F0-34736F91BC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28626C1A-ECBF-4DC8-A6F0-34736F91BC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28626C1A-ECBF-4DC8-A6F0-34736F91BC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D48BE1-1271-4A4D-A761-8E8421F5CFCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D48BE1-1271-4A4D-A761-8E8421F5CFCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D48BE1-1271-4A4D-A761-8E8421F5CFCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D48BE1-1271-4A4D-A761-8E8421F5CFCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8899FDED-9FBD-432E-9ABD-2DE619F2CDB4}
+	EndGlobalSection
+EndGlobal
