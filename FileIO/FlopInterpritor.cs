@@ -11,6 +11,7 @@ namespace FileIO
         
         private string AllText;
         private string FlopPath;
+        private List<string> Keys, Values;
 
         public FlopInterpritor(string flopPath, string flopName)
         {
@@ -176,8 +177,7 @@ namespace FileIO
         {
 
             string valueText, keyText, workingText, capturedText;
-            int buffer;
-            List<string> Values, Keys;
+            int buffer, test1;
             string[,] ValuesMatrix;
 
             Values = new List<string>();
@@ -188,26 +188,28 @@ namespace FileIO
             {
 
                 buffer = workingText.IndexOf("-s0");
-                capturedText = workingText.Substring(0, buffer - 1);
-                keyText = capturedText.Substring(0, capturedText.IndexOf('='));
-                valueText = capturedText.Substring(capturedText.IndexOf('='), capturedText.Length-1);
+                capturedText = workingText.Substring(0, buffer);
+                test1 = capturedText.IndexOf('=');
+                keyText = capturedText.Substring(0, test1);
+
+                valueText = capturedText.Substring(test1+1, capturedText.Length-test1-1);
                 Values.Add(valueText);
                 Keys.Add(keyText);
-                capturedText = capturedText.Substring(buffer+3, capturedText.Length);
+                workingText = workingText.Substring(buffer+3, workingText.Length-(buffer+3)-2);
 
             }
 
-            ValuesMatrix = new string[Values.Capacity, Keys.Capacity];
-            for(int i = 0; i < Values.Capacity; i++)
+            ValuesMatrix = new string[Keys.Count, 2];
+            for(int i = 0; i < Values.Count; i++)
             {
 
                 ValuesMatrix[i, 0] = Values[i];
 
             }
-            for(int i = 0; i < Keys.Capacity; i++)
+            for(int i = 0; i < Keys.Count; i++)
             {
 
-                ValuesMatrix[0, i] = Keys[i];
+                ValuesMatrix[i, 1] = Keys[i];
 
             }
 

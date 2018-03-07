@@ -35,7 +35,13 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LeftPane = new System.Windows.Forms.Panel();
+            this.KeyBox = new System.Windows.Forms.ListBox();
+            this.RightPane = new System.Windows.Forms.Panel();
+            this.ValueBox = new System.Windows.Forms.ListBox();
             this.HotBar.SuspendLayout();
+            this.LeftPane.SuspendLayout();
+            this.RightPane.SuspendLayout();
             this.SuspendLayout();
             // 
             // HotBar
@@ -102,12 +108,68 @@
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(144, 30);
             this.closeToolStripMenuItem.Text = "Close";
             // 
+            // LeftPane
+            // 
+            this.LeftPane.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.LeftPane.Controls.Add(this.KeyBox);
+            this.LeftPane.Location = new System.Drawing.Point(12, 58);
+            this.LeftPane.Name = "LeftPane";
+            this.LeftPane.Size = new System.Drawing.Size(306, 410);
+            this.LeftPane.TabIndex = 1;
+            this.LeftPane.Visible = false;
+            // 
+            // KeyBox
+            // 
+            this.KeyBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.KeyBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.KeyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KeyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.KeyBox.FormattingEnabled = true;
+            this.KeyBox.IntegralHeight = false;
+            this.KeyBox.ItemHeight = 31;
+            this.KeyBox.Location = new System.Drawing.Point(18, 28);
+            this.KeyBox.Name = "KeyBox";
+            this.KeyBox.ScrollAlwaysVisible = true;
+            this.KeyBox.Size = new System.Drawing.Size(267, 356);
+            this.KeyBox.TabIndex = 2;
+            // 
+            // RightPane
+            // 
+            this.RightPane.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.RightPane.Controls.Add(this.ValueBox);
+            this.RightPane.Location = new System.Drawing.Point(324, 58);
+            this.RightPane.Name = "RightPane";
+            this.RightPane.Size = new System.Drawing.Size(306, 410);
+            this.RightPane.TabIndex = 3;
+            this.RightPane.Visible = false;
+            // 
+            // ValueBox
+            // 
+            this.ValueBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ValueBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ValueBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ValueBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.ValueBox.FormattingEnabled = true;
+            this.ValueBox.IntegralHeight = false;
+            this.ValueBox.ItemHeight = 31;
+            this.ValueBox.Location = new System.Drawing.Point(18, 28);
+            this.ValueBox.Name = "ValueBox";
+            this.ValueBox.ScrollAlwaysVisible = true;
+            this.ValueBox.Size = new System.Drawing.Size(267, 356);
+            this.ValueBox.TabIndex = 2;
+            // 
             // Frame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(640, 480);
+            this.Controls.Add(this.RightPane);
+            this.Controls.Add(this.LeftPane);
             this.Controls.Add(this.HotBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frame";
@@ -118,6 +180,8 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Frame_Paint);
             this.HotBar.ResumeLayout(false);
             this.HotBar.PerformLayout();
+            this.LeftPane.ResumeLayout(false);
+            this.RightPane.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,6 +194,10 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.Panel LeftPane;
+        private System.Windows.Forms.ListBox KeyBox;
+        private System.Windows.Forms.Panel RightPane;
+        private System.Windows.Forms.ListBox ValueBox;
     }
 }
 
