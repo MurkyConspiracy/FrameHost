@@ -85,7 +85,29 @@ namespace FileIO
 
             string fileToCreate = newFlopPath + "\\" + fileName + ".FLOP";
             File.Create(fileToCreate, 1).Close();
+            
+            using (StreamWriter sw = new StreamWriter(fileToCreate))
+            {
 
+                sw.WriteLine("FloppyFrame-ProjectFlop");
+
+            }
+
+            Byte[] byteString;
+            using (StreamReader file = File.OpenText(fileToCreate))
+            {
+                string s = file.ReadToEnd();
+                byteString = Encoding.UTF8.GetBytes(s);
+                for (int i = 0; i < byteString.Length; i++)
+                {
+
+                    byteString[i] ^= 25;
+
+                }
+
+            }
+
+            File.WriteAllBytes(fileToCreate, byteString);
         }
 
         public static void CreateFlop(string newFlopPath, string fileName, string key, string value)
@@ -97,6 +119,7 @@ namespace FileIO
             using (StreamWriter sw = new StreamWriter(fileToCreate))
             {
 
+                sw.WriteLine("FloppyFrame-ProjectFlop");
                 sw.WriteLine(key + "=" + value + "-s0");
 
             }
@@ -122,7 +145,7 @@ namespace FileIO
         public void WriteToFlop(string newKey, string value)
         {
 
-            AllText += newKey + "=" + value + "-s0\n";
+            AllText += newKey + "=" + value + "-s0";
 
             FlopXORSave();
 

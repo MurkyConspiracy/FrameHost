@@ -77,11 +77,11 @@ namespace FrameHost
 
                             for(int i = 0; i < values.GetLength(0); i++)
                             {
-                                KeyBox.Items.Add(values[i, 0]);
+                                KeyBox.Items.Add(values[i, 1]);
                             }
                             for (int i = 0; i < values.GetLength(0); i++)
                             {
-                                ValueBox.Items.Add(values[i, 1]);
+                                ValueBox.Items.Add(values[i, 0]);
                             }
 
                         }
