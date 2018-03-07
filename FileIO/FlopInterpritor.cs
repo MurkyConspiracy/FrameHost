@@ -206,10 +206,10 @@ namespace FileIO
             Values = new List<string>();
             Keys = new List<string>();
             workingText = AllText;
+            workingText = workingText.Substring(workingText.IndexOf("ProjectFlop\n\r")+13);
 
-            while(workingText.Length > 0)
+            while (workingText.Length > 0)
             {
-
                 buffer = workingText.IndexOf("-s0");
                 capturedText = workingText.Substring(0, buffer);
                 test1 = capturedText.IndexOf('=');

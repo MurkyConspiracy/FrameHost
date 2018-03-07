@@ -15,6 +15,7 @@ namespace FrameHost
     {
         private string InstallPath, Binaries, Settings;
         private string ProgressTick;
+        private FlopInterpritor currentFlop;
 
         public Frame(string path)
         {
@@ -50,6 +51,15 @@ namespace FrameHost
             Environment.Exit(0);
         }
 
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            currentFlop = null;
+            LeftPane.Visible = false;
+            RightPane.Visible = false;
+
+        }
+
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Stream fileStream = null;
@@ -72,8 +82,8 @@ namespace FrameHost
                         {
                             LeftPane.Visible = true;
                             RightPane.Visible = true;
-                            FlopInterpritor floppy = new FlopInterpritor(file.FileName);
-                            string[,] values = floppy.GetAllValues();
+                            currentFlop = new FlopInterpritor(file.FileName);
+                            string[,] values = currentFlop.GetAllValues();
 
                             for(int i = 0; i < values.GetLength(0); i++)
                             {

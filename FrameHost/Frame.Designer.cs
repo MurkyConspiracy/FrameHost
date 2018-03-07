@@ -32,7 +32,7 @@
             this.HotBar = new System.Windows.Forms.ToolStrip();
             this.ExitSystemButton = new System.Windows.Forms.ToolStripButton();
             this.FileButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LeftPane = new System.Windows.Forms.Panel();
@@ -79,7 +79,7 @@
             this.FileButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.FileButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
+            this.openToolStripOpen,
             this.saveToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.FileButton.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,24 +89,25 @@
             this.FileButton.Size = new System.Drawing.Size(104, 32);
             this.FileButton.Text = "   File   ";
             // 
-            // openToolStripMenuItem
+            // openToolStripOpen
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(144, 30);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripOpen.Name = "openToolStripOpen";
+            this.openToolStripOpen.Size = new System.Drawing.Size(181, 30);
+            this.openToolStripOpen.Text = "Open";
+            this.openToolStripOpen.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(144, 30);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 30);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(144, 30);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(181, 30);
             this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // LeftPane
             // 
@@ -191,7 +192,7 @@
         private System.Windows.Forms.ToolStrip HotBar;
         private System.Windows.Forms.ToolStripButton ExitSystemButton;
         private System.Windows.Forms.ToolStripDropDownButton FileButton;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripOpen;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Panel LeftPane;
