@@ -1,61 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
+﻿using FileIO;
+using System;
 using System.IO;
-using FileIO;
+using System.Windows.Forms;
 
 namespace FrameHost
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\FloppyFrame\\Settings\\";
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            try
+            if (Directory.Exists(path))
             {
-
-                FlopInterpritor flop = new FlopInterpritor(path, "DEFAULTS");
-                if(flop.FindValue("Installed") == "True")
+                FLOPFile flop = new FLOPFile(path, "DEFAULTS");
+                if (flop.FindValue("Installed") == "True")
                 {
-                    
-                    foreach(var arg in args)
+                    foreach (var arg in args)
                     {
-
-                        if(arg.Contains(".FLOP"))
+                        if (arg.Contains(".FLOP"))
                         {
-
-                            Application.Run(new Frame(arg));
-
+                            Application.Run(new Frame());
                         }
-                        if(arg.Contains(".FLOPX"))
+                        if (arg.Contains(".FLOPX"))
                         {
-
                             Application.Run(new GameWindow(arg));
-
                         }
-
                     }
-
                     Application.Run(new Frame());
-                    
                 }
-
             }
-            catch (Exception e)
-            {
-                Installer.Install();
-            }
-
-
+            else { Installer.Install(); }
         }
     }
 }

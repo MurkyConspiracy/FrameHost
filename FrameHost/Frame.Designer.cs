@@ -35,10 +35,14 @@
             this.openToolStripOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditFLOPStrip = new System.Windows.Forms.ToolStripDropDownButton();
+            this.AddKeyToolButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteKeyToolButton = new System.Windows.Forms.ToolStripMenuItem();
             this.LeftPane = new System.Windows.Forms.Panel();
             this.KeyBox = new System.Windows.Forms.ListBox();
             this.RightPane = new System.Windows.Forms.Panel();
             this.ValueBox = new System.Windows.Forms.ListBox();
+            this.NewToolStripButton = new System.Windows.Forms.ToolStripMenuItem();
             this.HotBar.SuspendLayout();
             this.LeftPane.SuspendLayout();
             this.RightPane.SuspendLayout();
@@ -52,7 +56,8 @@
             this.HotBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.HotBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ExitSystemButton,
-            this.FileButton});
+            this.FileButton,
+            this.EditFLOPStrip});
             this.HotBar.Location = new System.Drawing.Point(0, 0);
             this.HotBar.Name = "HotBar";
             this.HotBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -79,6 +84,7 @@
             this.FileButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.FileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.FileButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewToolStripButton,
             this.openToolStripOpen,
             this.saveToolStripMenuItem,
             this.closeToolStripMenuItem});
@@ -101,6 +107,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 30);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
@@ -108,6 +115,35 @@
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(181, 30);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // EditFLOPStrip
+            // 
+            this.EditFLOPStrip.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.EditFLOPStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.EditFLOPStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddKeyToolButton,
+            this.deleteKeyToolButton});
+            this.EditFLOPStrip.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditFLOPStrip.Image = ((System.Drawing.Image)(resources.GetObject("EditFLOPStrip.Image")));
+            this.EditFLOPStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditFLOPStrip.Name = "EditFLOPStrip";
+            this.EditFLOPStrip.Size = new System.Drawing.Size(107, 32);
+            this.EditFLOPStrip.Text = "   Edit   ";
+            this.EditFLOPStrip.Visible = false;
+            // 
+            // AddKeyToolButton
+            // 
+            this.AddKeyToolButton.Name = "AddKeyToolButton";
+            this.AddKeyToolButton.Size = new System.Drawing.Size(200, 30);
+            this.AddKeyToolButton.Text = "Add Key";
+            this.AddKeyToolButton.Click += new System.EventHandler(this.AddKeyToolButton_Click);
+            // 
+            // deleteKeyToolButton
+            // 
+            this.deleteKeyToolButton.Name = "deleteKeyToolButton";
+            this.deleteKeyToolButton.Size = new System.Drawing.Size(200, 30);
+            this.deleteKeyToolButton.Text = "Delete Key";
+            this.deleteKeyToolButton.Click += new System.EventHandler(this.deleteKeyToolButton_Click);
             // 
             // LeftPane
             // 
@@ -135,6 +171,9 @@
             this.KeyBox.ScrollAlwaysVisible = true;
             this.KeyBox.Size = new System.Drawing.Size(267, 356);
             this.KeyBox.TabIndex = 2;
+            this.KeyBox.SelectedIndexChanged += new System.EventHandler(this.KeyBox_SelectedIndexChanged);
+            this.KeyBox.DoubleClick += new System.EventHandler(this.KeyBox_DoubleClick);
+            this.KeyBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyBox_KeyPress);
             // 
             // RightPane
             // 
@@ -162,6 +201,16 @@
             this.ValueBox.ScrollAlwaysVisible = true;
             this.ValueBox.Size = new System.Drawing.Size(267, 356);
             this.ValueBox.TabIndex = 2;
+            this.ValueBox.SelectedIndexChanged += new System.EventHandler(this.ValueBox_SelectedIndexChanged);
+            this.ValueBox.DoubleClick += new System.EventHandler(this.ValueBox_DoubleClick);
+            this.ValueBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ValueBox_KeyPress);
+            // 
+            // NewToolStripButton
+            // 
+            this.NewToolStripButton.Name = "NewToolStripButton";
+            this.NewToolStripButton.Size = new System.Drawing.Size(181, 30);
+            this.NewToolStripButton.Text = "New";
+            this.NewToolStripButton.Click += new System.EventHandler(this.NewToolStripButton_Click);
             // 
             // Frame
             // 
@@ -199,6 +248,10 @@
         private System.Windows.Forms.ListBox KeyBox;
         private System.Windows.Forms.Panel RightPane;
         private System.Windows.Forms.ListBox ValueBox;
+        private System.Windows.Forms.ToolStripDropDownButton EditFLOPStrip;
+        private System.Windows.Forms.ToolStripMenuItem AddKeyToolButton;
+        private System.Windows.Forms.ToolStripMenuItem deleteKeyToolButton;
+        private System.Windows.Forms.ToolStripMenuItem NewToolStripButton;
     }
 }
 
