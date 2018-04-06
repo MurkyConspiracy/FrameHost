@@ -229,7 +229,11 @@ namespace FrameHost
                             { ValueBox.Items.Add(Values[i, 0]); }
                         }
                         if (Path.GetExtension(file.FileName).ToLower() == ".Flopx".ToLower())
-                        { MessageBox.Show("FLOPX"); }
+                        {
+
+                            ExecuteFLOPX(file.FileName);
+
+                        }
                         fileStream.Close();
                     }
                 }
@@ -238,6 +242,11 @@ namespace FrameHost
                     MessageBox.Show("Error: Could not read file from disk.\n\r Original error:\r\n" + ex.Message);
                 }
             }
+        }
+
+        private void ExecuteFLOPX(string fileName)
+        {
+            throw new NotImplementedException();
         }
 
         private void Frame_Paint(object sender, PaintEventArgs e)
